@@ -51,7 +51,6 @@ void init(GLFWwindow *window) {
 	OVRHelper::getInstance()->init();
 	glm::ivec2 windowSize = OVRHelper::getInstance()->getViewportSize();
 	glfwSetWindowSize(window, windowSize.x, windowSize.y);
-	
 	/*
 	This load a 3D image and builds a 3D model from voxels of the value "1" 
 	and uses shader programs starting with prefix "simple"
