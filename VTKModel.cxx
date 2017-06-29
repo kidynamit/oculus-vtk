@@ -137,8 +137,8 @@ VTKModel::VTKModel(std::string filename, std::string program) {
 
 	m_programName = program;
 	//m_triangles = getSquarePolyData();
-	m_triangles = getImagePolyData(filename);
-	//m_triangles = getSpherePolyData();
+	//m_triangles = getImagePolyData(filename);
+	m_triangles = getSpherePolyData();
 	m_isInitialized = false;
 	m_isThreadRunning = false;
 }
@@ -178,7 +178,6 @@ void VTKModel::watchFileForNewProgram() {
 		std::string pathToWatch = VTKModel::getResourcePath("shaders\\");
 
 		notifyHandles[0] = FindFirstChangeNotification(pathToWatch.c_str(), FALSE, FILE_NOTIFY_CHANGE_LAST_WRITE);
-
 		dwWaitStatus = WaitForMultipleObjects(1, notifyHandles, FALSE, INFINITE);
 
 		if (dwWaitStatus == WAIT_OBJECT_0) {
