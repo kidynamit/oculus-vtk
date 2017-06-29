@@ -8,6 +8,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#define GLM_ENABLE_EXPERIMENTAL
+
 #include <glm/vec3.hpp>
 #include <glm/gtx/transform2.hpp>
 #include <glm/mat4x4.hpp>
@@ -37,7 +39,7 @@ void renderOVRScene(glm::mat4 projection, glm::mat4 view) {
 
 static void render(GLFWwindow *window) {
 	
-	glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
@@ -62,7 +64,7 @@ void init(GLFWwindow *window) {
 
 	//Move the camera to be outside the object
 	glm::vec3 camera = center;
-	camera.z -= depth - 50.0f;
+	camera.z -= depth - 5.0f;
 
 	OVRHelper::getInstance()->setLookAt(camera, center);
 
