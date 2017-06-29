@@ -2,3 +2,6 @@
 /external/glfw
 /external/glm
 /includes/paths.h
+*.dir/
+build/
+x64/
