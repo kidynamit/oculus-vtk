@@ -5,3 +5,5 @@
 *.dir/
 build/
 x64/
+*.pyc
+__pycache__
